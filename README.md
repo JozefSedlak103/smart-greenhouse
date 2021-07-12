@@ -1,10 +1,8 @@
 # IOT Greenhouse
 
-### by Greenhouse Inc
 
 
-
-SMART skleník© pracujúci na technológii IOT
+SMART skleník pracujúci na technológii IOT
 
 Pohodlie rastlín je možné sledovať pomocou senzorov:
 - vlhkosti v pôde a vo vzduchu
