@@ -1,0 +1,44 @@
+{
+    "version": 1,
+    "key": "core.restore_state",
+    "data": [
+        {
+            "state": {
+                "entity_id": "person.greenhouse_inc",
+                "state": "unknown",
+                "attributes": {
+                    "editable": false,
+                    "id": "greenhouse_inc",
+                    "user_id": "2e1f51b3bfcb468ca80cab89c57f82c2",
+                    "friendly_name": "Greenhouse_inc"
+                },
+                "last_changed": "2021-04-29T18:20:25.759667+00:00",
+                "last_updated": "2021-04-29T18:20:29.980842+00:00",
+                "context": {
+                    "id": "e2261262e9567fe8f3febf88d47c32a6",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-04-29T18:30:38.987145+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "switch.greenhouse_light",
+                "state": "off",
+                "attributes": {
+                    "friendly_name": "Greenhouse_light",
+                    "assumed_state": true
+                },
+                "last_changed": "2021-04-29T18:20:29.827373+00:00",
+                "last_updated": "2021-04-29T18:20:29.827373+00:00",
+                "context": {
+                    "id": "e76910930a9b882796d44384979e372d",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-04-29T18:30:38.987145+00:00"
+        }
+    ]
+}

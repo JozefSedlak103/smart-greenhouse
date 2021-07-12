@@ -1,0 +1,179 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+mqtt:
+  broker: 0784feee8a834b3aa62a8445966adf72.s1.eu.hivemq.cloud
+  port: 8883
+  username: pespes
+  password: Hackaton2021
+  certificate: 'auto'
+  discovery: false
+
+switch:
+  - name: "Greenhouse_light"
+    platform: mqtt
+    command_topic: "kpi/iot/hackathon2021/greenhouse/light"
+    payload_on: "On"
+    payload_off: "Off"
+    retain: true
+
+sensor: 
+  - name: "Greenhouse heater"
+    platform: mqtt
+    state_topic: "kpi/iot/hackathon2021/greenhouse/heater"
+    unique_id: "Greenhouse_heater"
+    icon: "mdi:fire"
+
+  - name: "Greenhouse ventilator"
+    platform: mqtt
+    state_topic: "kpi/iot/hackathon2021/greenhouse/vent"
+    unique_id: "Greenhouse_vent"
+    icon: "mdi:fan"
+
+  - name: "Greenhouse temperature"
+    platform: mqtt
+    state_topic: "kpi/iot/hackathon2021/greenhouse/temperature"
+    unique_id: "Greenhouse_temperature"
+    icon: "mdi:thermometer"
+
+  - name: "Water level"
+    platform: mqtt
+    state_topic: "kpi/iot/hackathon2021/greenhouse/water"
+    unique_id: "Greenhouse_water_level"
+    icon: "mdi:watering-can"
+
+  - name: "Greenhouse shaders"
+    platform: mqtt
+    state_topic: "kpi/iot/hackathon2021/greenhouse/shader"
+    unique_id: "Greenhouse_shaders"
+    icon: "mdi:blinds"
+  
+  - name: "Flower1 - soil moisture "
+    platform: mqtt
+    state_topic: "kpi/iot/hackathon2021/greenhouse/sprinkler1"
+    unique_id: "Flower1_soil_moisture"
+    icon: "mdi:watering-can-outline"
+  
+  - name: "Flower2 - soil moisture "
+    platform: mqtt
+    state_topic: "kpi/iot/hackathon2021/greenhouse/sprinkler2"
+    unique_id: "Flower2_soil_moisture"
+    icon: "mdi:watering-can-outline"
+  
+  - name: "Flower3 - soil moisture "
+    platform: mqtt
+    state_topic: "kpi/iot/hackathon2021/greenhouse/sprinkler3"
+    unique_id: "Flower3_soil_moisture"
+    icon: "mdi:watering-can-outline"
+  
+  - name: "Flower4 - soil moisture "
+    platform: mqtt
+    state_topic: "kpi/iot/hackathon2021/greenhouse/sprinkler4"
+    unique_id: "Flower4_soil_moisture"
+    icon: "mdi:watering-can-outline"
+  
+  - name: "Flower5 - soil moisture "
+    platform: mqtt
+    state_topic: "kpi/iot/hackathon2021/greenhouse/sprinkler5"
+    unique_id: "Flower5_soil_moisture"
+    icon: "mdi:watering-can-outline"
+
+  - name: "Flower6 - soil moisture "
+    platform: mqtt
+    state_topic: "kpi/iot/hackathon2021/greenhouse/sprinkler6"
+    unique_id: "Flower6_soil_moisture"
+    icon: "mdi:watering-can-outline"
+
+  - name: "Flower7 - soil moisture "
+    platform: mqtt
+    state_topic: "kpi/iot/hackathon2021/greenhouse/sprinkler7"
+    unique_id: "Flower7_soil_moisture"
+    icon: "mdi:watering-can-outline"
+
+  - name: "Flower8 - soil moisture "
+    platform: mqtt
+    state_topic: "kpi/iot/hackathon2021/greenhouse/sprinkler8"
+    unique_id: "Flower8_soil_moisture"
+    icon: "mdi:watering-can-outline"
+
+  - name: "Flower9 - soil moisture "
+    platform: mqtt
+    state_topic: "kpi/iot/hackathon2021/greenhouse/sprinkler9"
+    unique_id: "Flower9_soil_moisture"
+    icon: "mdi:watering-can-outline"
+  
+  - name: "Flower10 - soil moisture "
+    platform: mqtt
+    state_topic: "kpi/iot/hackathon2021/greenhouse/sprinkler10"
+    unique_id: "Flower10_soil_moisture"
+    icon: "mdi:watering-can-outline"
+
+  - name: "Flower1 - pH"
+    platform: mqtt
+    state_topic: "kpi/iot/hackathon2021/greenhouse/flower_pH1"
+    unique_id: "Flower1_pH"
+    icon: "mdi:flask-outline"
+  
+  - name: "Flower2 - pH"
+    platform: mqtt
+    state_topic: "kpi/iot/hackathon2021/greenhouse/flower_pH2"
+    unique_id: "Flower2_pH"
+    icon: "mdi:flask-outline"
+  
+  - name: "Flower3 - pH"
+    platform: mqtt
+    state_topic: "kpi/iot/hackathon2021/greenhouse/flower_pH3"
+    unique_id: "Flower3_pH"
+    icon: "mdi:flask-outline"
+  
+  - name: "Flower4 - pH"
+    platform: mqtt
+    state_topic: "kpi/iot/hackathon2021/greenhouse/flower_pH4"
+    unique_id: "Flower4_pH"
+    icon: "mdi:flask-outline"
+  
+  - name: "Flower5 - pH"
+    platform: mqtt
+    state_topic: "kpi/iot/hackathon2021/greenhouse/flower_pH5"
+    unique_id: "Flower5_pH"
+    icon: "mdi:flask-outline"
+  
+  - name: "Flower6 - pH"
+    platform: mqtt
+    state_topic: "kpi/iot/hackathon2021/greenhouse/flower_pH6"
+    unique_id: "Flower6_pH"
+    icon: "mdi:flask-outline"
+  
+  - name: "Flower7 - pH"
+    platform: mqtt
+    state_topic: "kpi/iot/hackathon2021/greenhouse/flower_pH7"
+    unique_id: "Flower7_pH"
+    icon: "mdi:flask-outline"
+  
+  - name: "Flower8 - pH"
+    platform: mqtt
+    state_topic: "kpi/iot/hackathon2021/greenhouse/flower_pH8"
+    unique_id: "Flower8_pH"
+    icon: "mdi:flask-outline"
+  
+  - name: "Flower9 - pH"
+    platform: mqtt
+    state_topic: "kpi/iot/hackathon2021/greenhouse/flower_pH9"
+    unique_id: "Flower9_pH"
+    icon: "mdi:flask-outline"
+  
+  - name: "Flower10 - pH"
+    platform: mqtt
+    state_topic: "kpi/iot/hackathon2021/greenhouse/flower_pH10"
+    unique_id: "Flower10_pH"
+    icon: "mdi:flask-outline"

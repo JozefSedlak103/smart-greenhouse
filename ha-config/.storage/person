@@ -1,0 +1,14 @@
+{
+    "version": 2,
+    "key": "person",
+    "data": {
+        "items": [
+            {
+                "name": "Greenhouse_inc",
+                "user_id": "2e1f51b3bfcb468ca80cab89c57f82c2",
+                "device_trackers": [],
+                "id": "greenhouse_inc"
+            }
+        ]
+    }
+}

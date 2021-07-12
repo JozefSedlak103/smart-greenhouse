@@ -1,0 +1,378 @@
+title: Greenhouse
+views:
+  - path: default_view
+    title: Greenhouse
+    theme: ''
+    badges: []
+    cards:
+      - type: gauge
+        entity: sensor.water_level
+        min: 0
+        max: 200
+        severity:
+          green: 150
+          yellow: 80
+          red: 10
+      - type: button
+        tap_action:
+          action: toggle
+        entity: switch.greenhouse_light
+        show_state: true
+        icon: 'mdi:lightbulb'
+      - type: entity
+        entity: sensor.greenhouse_heater
+        name: Greenhouse heater
+      - type: entity
+        entity: sensor.greenhouse_shaders
+        name: Greenhouse shaders
+      - type: entity
+        entity: sensor.greenhouse_temperature
+        name: Greenhouse temperature
+        unit: °C
+      - type: entity
+        entity: sensor.greenhouse_ventilator
+        name: Greenhouse ventilator
+      - type: picture-elements
+        elements:
+          - type: state-icon
+            entity: switch.greenhouse_light
+            title: light
+            icon: 'mdi:lightbulb'
+            state_color: true
+            style:
+              top: 10%
+              left: 10%
+            tap_action:
+              action: toggle
+          - type: state-icon
+            entity: sensor.greenhouse_shaders
+            title: Shaders
+            style:
+              top: 25%
+              left: 45%
+              '--paper-item-icon-color': blue
+          - type: state-icon
+            entity: sensor.greenhouse_heater
+            title: Heater
+            style:
+              top: 90%
+              left: 82%
+              '--paper-item-icon-color': red
+          - type: state-icon
+            entity: sensor.greenhouse_ventilator
+            title: Ventilator
+            style:
+              top: 90%
+              left: 90%
+              '--paper-item-icon-color': cyan
+          - type: state-icon
+            entity: sensor.flower1_soil_moisture
+            title: Tomato
+            state_color: true
+            style:
+              top: 47%
+              left: 47%
+              '--paper-item-icon-color': green
+              background: '#FFFFFF60'
+            icon: 'mdi:sprout'
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/flowerpot-1/
+          - type: state-icon
+            entity: sensor.flower2_soil_moisture
+            title: Red Pepper
+            state_color: true
+            style:
+              top: 51%
+              left: 54%
+              '--paper-item-icon-color': green
+              background: '#FFFFFF60'
+            icon: 'mdi:sprout'
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/flowerpot-2/
+          - type: state-icon
+            entity: sensor.flower3_soil_moisture
+            title: Cucumber
+            state_color: true
+            style:
+              top: 56%
+              left: 61%
+              '--paper-item-icon-color': green
+              background: '#FFFFFF60'
+            icon: 'mdi:sprout'
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/flowerpot-3/
+          - type: state-icon
+            entity: sensor.flower4_soil_moisture
+            title: Chilli pepper
+            style:
+              top: 60%
+              left: 69%
+              '--paper-item-icon-color': green
+              background: '#FFFFFF60'
+            icon: 'mdi:sprout'
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/flowerpot-4/
+          - type: state-icon
+            entity: sensor.flower5_soil_moisture
+            title: Strawberries
+            state_color: true
+            style:
+              top: 65%
+              left: 79%
+              '--paper-item-icon-color': green
+              background: '#FFFFFF60'
+            icon: 'mdi:sprout'
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/flowerpot-5/
+          - type: state-icon
+            entity: sensor.flower6_soil_moisture
+            title: Carrot
+            state_color: true
+            style:
+              top: 55%
+              left: 24%
+              '--paper-item-icon-color': green
+              background: '#FFFFFF60'
+            icon: 'mdi:sprout'
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/flowerpot-6/
+          - type: state-icon
+            entity: sensor.flower7_soil_moisture
+            title: Parsley
+            state_color: true
+            style:
+              top: 60%
+              left: 30%
+              '--paper-item-icon-color': green
+              background: '#FFFFFF60'
+            icon: 'mdi:sprout'
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/flowerpot-7/
+          - type: state-icon
+            entity: sensor.flower8_soil_moisture
+            title: Oregano
+            state_color: true
+            style:
+              top: 66%
+              left: 37%
+              '--paper-item-icon-color': green
+              background: '#FFFFFF60'
+            icon: 'mdi:sprout'
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/flowerpot-8/
+          - type: state-icon
+            entity: sensor.flower9_soil_moisture
+            title: Strawberries
+            state_color: true
+            style:
+              top: 71%
+              left: 43%
+              '--paper-item-icon-color': green
+              background: '#FFFFFF60'
+            icon: 'mdi:sprout'
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/flowerpot-9/
+          - type: state-icon
+            entity: sensor.flower10_soil_moisture
+            title: Strawberries
+            state_color: true
+            style:
+              top: 76%
+              left: 52%
+              '--paper-item-icon-color': green
+              background: '#FFFFFF60'
+            icon: 'mdi:sprout'
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/flowerpot-10/
+        image: >-
+          https://image.freepik.com/free-vector/isometric-greenhouse-with-plants-glass-with-open-door-isolated-illustration-icon-white-background_134830-396.jpg
+  - title: Flowerpot 1
+    path: flowerpot-1
+    badges: []
+    cards:
+      - type: picture
+        image: >-
+          https://c.pxhere.com/images/40/44/4d6b0f52301fc90bb38bf50acfd5-1635824.jpg!d
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+      - type: entity
+        entity: sensor.flower1_soil_moisture
+        name: Flower sprinkler
+      - type: entity
+        entity: sensor.flower1_ph
+        name: 'Flower pH '
+        unit: pH
+  - title: Flowerpot 2
+    path: flowerpot-2
+    badges: []
+    cards:
+      - type: picture
+        image: >-
+          https://www.gardendesign.com/pictures/images/900x705Max/site_3/fire-away-hot-heavy-pepper-pepper-plant-proven-winners_15788.jpg
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+      - type: entity
+        entity: sensor.flower2_soil_moisture
+        name: Flower sprinkler
+      - type: entity
+        entity: sensor.flower2_ph
+        name: Flower pH
+        unit: pH
+  - title: Flowerpot 3
+    path: flowerpot-3
+    badges: []
+    cards:
+      - type: picture
+        image: >-
+          https://cdn.harvesttotable.com/htt/2009/03/23181409/Cucumber-near-maturity-1.jpg
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+      - type: entity
+        entity: sensor.flower3_soil_moisture
+        name: Flower sprinkler
+      - type: entity
+        entity: sensor.flower3_ph
+        name: Flower pH
+        unit: pH
+  - title: Flowerpot 4
+    path: flowerpot-4
+    badges: []
+    cards:
+      - type: picture
+        image: >-
+          https://previews.123rf.com/images/jacquesdurocher/jacquesdurocher1608/jacquesdurocher160800083/61712000-red-chilli-peppers-plant.jpg
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+      - type: entity
+        entity: sensor.flower4_soil_moisture
+        name: Flower sprinkler
+      - type: entity
+        entity: sensor.flower4_ph
+        name: Flower pH
+        unit: pH
+  - title: Flowerpot 5
+    path: flowerpot-5
+    badges: []
+    cards:
+      - type: picture
+        image: >-
+          https://thumbs.dreamstime.com/b/strawberry-plant-ripening-berries-strawberry-plant-ripening-berries-blurred-background-118640644.jpg
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+      - type: entity
+        entity: sensor.flower5_soil_moisture
+        name: Flower sprinkler
+      - type: entity
+        entity: sensor.flower5_ph
+        name: Flower pH
+        unit: pH
+  - title: FLOWERPOT 6
+    path: flowerpot-6
+    badges: []
+    cards:
+      - type: picture
+        image: >-
+          https://www.burpee.com/dw/image/v2/ABAQ_PRD/on/demandware.static/-/Sites-masterCatalog_Burpee/default/dwa74e0ebb/Images/Product%20Images/prod000632/prod000632.jpg?sw=322&sh=380&sm=fit
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+      - type: entity
+        entity: sensor.flower6_soil_moisture
+        name: Flower sprinkler
+      - type: entity
+        entity: sensor.flower6_ph
+        name: Flower pH
+        unit: pH
+  - title: FLOWERPOT 7
+    path: flowerpot-7
+    badges: []
+    cards:
+      - type: picture
+        image: >-
+          https://cdn.harvesttotable.com/htt/2007/04/23174752/Parsley-Root-bigstock-Parsley-Root-With-Leaves-On-A-262654507-1024x725.jpg
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+      - type: entity
+        entity: sensor.flower7_soil_moisture
+        name: Flower sprinkler
+      - type: entity
+        name: Flower pH
+        unit: pH
+        entity: sensor.flower7_ph
+  - title: FLOWERPOT 8
+    path: flowerpot-8
+    badges: []
+    cards:
+      - type: picture
+        image: >-
+          https://www.zivotosprava.sk/wp-content/uploads/2020/02/Oregano-Ake-ma-ucinky-a-pouzitie-skusenosti-davkovanie-a-neziaduce-ucinky.jpg
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+      - type: entity
+        entity: sensor.flower8_soil_moisture
+        name: Flower sprinkler
+      - type: entity
+        entity: sensor.flower8_ph
+        name: Flower pH
+        unit: pH
+  - title: FLOWERPOT 9
+    path: flowerpot-9
+    badges: []
+    cards:
+      - type: picture
+        image: >-
+          https://www.gardeningknowhow.com/wp-content/uploads/2012/04/peppermint-1.jpg
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+      - type: entity
+        entity: sensor.flower9_soil_moisture
+        name: Flower sprinkler
+      - type: entity
+        entity: sensor.flower9_ph
+        name: Flower pH
+        unit: pH
+  - title: FLOWERPOT 10
+    path: flowerpot-10
+    badges: []
+    cards:
+      - type: picture
+        image: >-
+          https://www.gardeningknowhow.com/wp-content/uploads/2020/11/organic-basil.jpg
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+      - type: entity
+        entity: sensor.flower10_soil_moisture
+        name: Flower sprinkler
+      - type: entity
+        entity: sensor.flower10_ph
+        name: Flower pH
+        unit: pH

@@ -1,0 +1,64 @@
+version: "3.6"
+
+services:
+      nodered:
+            image: nodered/node-red
+            ports:
+                  - "1880:1880"
+            volumes:
+                  - node_red_data:/data
+
+      influxdb:
+            image: influxdb:1.8
+            container_name: influxdb
+            environment:
+                  - INFLUXDB_DB=db
+                  - INFLUXDB_USER=Greenhouse_inc
+                  - INFLUXDB_USER_PASSWORD=BzV5atUThFr94DLT
+            volumes:
+                  - influxdb:/var/lib/influxdb
+            ports:
+                  - 8086:8086
+            networks:
+                  - greenhouse
+
+      grafana:
+            image: grafana/grafana
+            ports:
+                    - 3000:3000
+            volumes:
+                    - grafana:/var/lib/grafana
+            networks:
+                    - greenhouse
+
+      homeassistant:
+            image: homeassistant/home-assistant:stable
+            volumes:
+                    - /etc/localtime:/etc/localtime:ro
+                    - ./ha-config:/config
+            # network_mode: host
+            ports:
+                    - 8123:8123
+            networks:
+                    - greenhouse
+      #mqtt:
+      #      image: eclipse-mosquitto
+      #      restart: always
+      #     volumes:
+      #              - ./mosquitto/config:/mosquitto/config
+      #              - ./mosquitto/data:/mosquitto/data
+      #              - ./mosquitto/log:/mosquitto/log
+      #      ports:
+      #              - 1883:1883
+      #              - 9001:9001
+      #      networks:
+      #              - greenhouse
+ 
+networks:
+    greenhouse:
+
+volumes:
+      node_red_data:
+      influxdb:
+      grafana:
+      homeassistant:
