@@ -14,7 +14,7 @@ services:
             environment:
                   - INFLUXDB_DB=db
                   - INFLUXDB_USER=Greenhouse_inc
-                  - INFLUXDB_USER_PASSWORD=BzV5atUThFr94DLT
+                  - INFLUXDB_USER_PASSWORD=***************
             volumes:
                   - influxdb:/var/lib/influxdb
             ports:
